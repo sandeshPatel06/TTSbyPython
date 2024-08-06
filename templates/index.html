@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text To Speech</title>
+    <style>
+      /* Basic styling for the body including background image and font */
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: url("data:image/jpeg;base64,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")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+      }
+
+      /* Container for the form, styled with a background color, padding, and shadow */
+      .form-container {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Slightly transparent background */
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        width: 100%;
+        max-width: 500px;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      /* Header styling within the form container */
+      .form-container h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #00796b;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      /* General styling for form groups including margins */
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      /* Label styling */
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #004d40;
+        font-weight: 500;
+      }
+
+      /* Styling for text inputs and select elements */
+      .form-group input[type="text"],
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #00796b;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      /* Focus state styling for text inputs and select elements */
+      .form-group input[type="text"]:focus,
+      .form-group select:focus {
+        border-color: #004d40;
+        box-shadow: 0 0 8px rgba(0, 77, 64, 0.3);
+        outline: none;
+      }
+
+      /* Styling for the submit button */
+      .form-group input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background-color: #00796b;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      /* Hover state styling for the submit button */
+      .form-group input[type="submit"]:hover {
+        background-color: #004d40;
+        transform: scale(1.02);
+      }
+
+      /* Loading text styling */
+      .loading {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #00796b;
+      }
+
+      /* Result container styling */
+      .result {
+        display: none;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Styling for audio player within the result container */
+      .result audio {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      /* Styling for the download link */
+      .result a {
+        color: #00796b;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Hover state styling for the download link */
+      .result a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive design adjustments */
+
+      @media (max-width: 600px) {
+        .form-container {
+          padding: 20px;
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main form container -->
+    <div class="form-container">
+      <!-- Loading indicator -->
+      <div class="loading" id="loading">Processing...</div>
+      <h2>Text to Speech</h2>
+      <!-- Form for text input and options -->
+      <form id="textForm">
+        <div class="form-group">
+          <label for="input">Input the text</label>
+          <input
+            type="text"
+            id="text"
+            name="name"
+            placeholder="Please input text only"
+            required
+            aria-describedby="textHelp"
+          />
+          <small id="textHelp" class="form-text"
+            >Only text is allowed; no numbers or special characters.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="language">Select Language</label>
+          <select id="language" name="language">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
+            <option value="pt">Portuguese</option>
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+            <option value="hi">Hindi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="voice">Select Voice</label>
+          <select id="voice" name="voice">
+            <!-- Options will be populated by JavaScript -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="rate">Speech Rate (words per minute)</label>
+          <input
+            type="number"
+            id="rate"
+            name="rate"
+            min="50"
+            max="500"
+            value="150"
+          />
+        </div>
+        <div class="form-group">
+          <label for="volume">Volume (0.0 to 1.0)</label>
+          <input
+            type="number"
+            id="volume"
+            name="volume"
+            step="0.1"
+            min="0"
+            max="1"
+            value="1"
+          />
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <!-- Container for the result, including audio player and download link -->
+      <div id="result" class="result">
+        <audio id="audioPlayer" controls></audio>
+        <br />
+        <a id="downloadAnchor" href="#" download>Download your MP3</a>
+      </div>
+    </div>
+
+    <script>
+      // Populate the voice options
+      fetch("/voices")
+        .then((response) => response.json())
+        .then((data) => {
+          const voiceSelect = document.getElementById("voice");
+          data.voices.forEach((voice) => {
+            const option = document.createElement("option");
+            option.value = voice.id;
+            option.textContent = voice.name;
+            voiceSelect.appendChild(option);
+          });
+        })
+        .catch((error) => console.error("Error fetching voices:", error));
+
+      document.getElementById("textForm").onsubmit = function (event) {
+        event.preventDefault();
+        document.getElementById("loading").style.display = "block";
+        var formData = new FormData(document.getElementById("textForm"));
+
+        fetch("/convert", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.blob())
+          .then((blob) => {
+            var url = window.URL.createObjectURL(blob);
+            var audio = document.getElementById("audioPlayer");
+            audio.src = url;
+            audio.play();
+            var a = document.getElementById("downloadAnchor");
+            a.href = url;
+            document.getElementById("result").style.display = "block";
+            document.getElementById("loading").style.display = "none";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            document.getElementById("loading").style.display = "none";
+            alert("An error occurred. Please try again.");
+          });
+      };
+    </script>
+  </body>
+</html>

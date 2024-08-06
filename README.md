@@ -21,7 +21,7 @@ This Flask web application provides a simple interface to convert text into spee
 1. **Clone the Repository**:
 
     ```bash
-    git clone  https://github.com/sandeshpatel06/ttsbypython.git
+    git clone  https://github.com/sandeshPatel06/TTSbyPython.git
     cd your-repository
     ```
 
@@ -70,10 +70,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or feedback, you can reach me at [your-email@example.com](mailto:your-email@example.com).
+For questions or feedback, you can reach me at [sandeshpatel.sp.93@gmail.com](mailto:sandeshpatel.sp.93@gmail.com).
 
 ## GitHub
 
-[GitHub Repository](https://github.com/yourusername/your-repository)
+[GitHub Repository](https://github.com/sandeshPatel06/TTSbyPython.git)
 ![image](https://github.com/user-attachments/assets/bb646975-55be-443f-aec3-9f1c9a7b98e1)
 
